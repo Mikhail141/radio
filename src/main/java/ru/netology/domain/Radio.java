@@ -1,11 +1,12 @@
 package ru.netology.domain;
 
+
 public class Radio {
 
-    private int maxStation = 10;
-    private int maxSound = 100;
-    private int currentNumberstation = 5;
-    private int currentSound = 50;
+    private int maxStation ;
+    private int maxSound ;
+    private int currentNumberstation ;
+    private int currentSound ;
 
 
     public Radio(int maxStation, int maxSound) {
@@ -49,7 +50,7 @@ public class Radio {
     }
 
     public void increaseCurrentNumberstation() {
-        if (currentNumberstation == 10) {
+        if (currentNumberstation == maxStation) {
 
             this.currentNumberstation = 0;
             return;
@@ -59,16 +60,16 @@ public class Radio {
 
     public void decreaseCurrentNumberstation() {
         if (currentNumberstation <= 0) {
-            this.currentNumberstation = 10;
+            this.currentNumberstation = maxStation;
             return;
         }
         this.currentNumberstation--;
     }
 
     public void increaseCurrentSound() {
-        if (currentSound >= 100) {
+        if (currentSound >= maxSound) {
 
-            this.currentSound = 100;
+            this.currentSound = maxSound;
             return;
         }
         this.currentSound++;

@@ -18,10 +18,10 @@ public class RadioTest {
 
     void shoudlcheckFieldsDefault() {
         Radio radio = new Radio ();
-        assertEquals(10,radio.getMaxStation());
-        assertEquals(100,radio.getMaxSound());
-        assertEquals(5,radio.getCurrentNumberstation());
-        assertEquals(50,radio.getCurrentSound());
+        assertEquals(0,radio.getMaxStation());
+        assertEquals(0,radio.getMaxSound());
+        assertEquals(0,radio.getCurrentNumberstation());
+        assertEquals(0,radio.getCurrentSound());
     }
 
 
