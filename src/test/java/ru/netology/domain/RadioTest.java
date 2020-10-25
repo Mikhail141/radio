@@ -5,21 +5,24 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class RadioTest {
-    Radio radio = new Radio(10,100);
+    Radio radio = new Radio();
 
     @Test
 
     void shoudlcheckFields() {
+         radio.setMaxStation(10);
+         radio.setMaxSound(100);
         assertEquals(10,radio.getMaxStation());
         assertEquals(100,radio.getMaxSound());
     }
+
 
     @Test
 
     void shoudlcheckFieldsDefault() {
         Radio radio = new Radio ();
-        assertEquals(0,radio.getMaxStation());
-        assertEquals(0,radio.getMaxSound());
+        assertEquals(10,radio.getMaxStation());
+        assertEquals(100,radio.getMaxSound());
         assertEquals(0,radio.getCurrentNumberstation());
         assertEquals(0,radio.getCurrentSound());
     }
@@ -44,6 +47,7 @@ public class RadioTest {
 
     @Test
     void increaseCurrentNumberstationMax() {
+
         radio.setCurrentNumberstation(10);
         radio.increaseCurrentNumberstation();
         assertEquals(0,radio.getCurrentNumberstation());
